@@ -7,14 +7,15 @@ the relevant packages, do
 sudo apt-get install derby-tools openjfx
 ```
 
+CreateCoffeeDB.java creates the database that we will work 
+with for Chapter 16.
 
-7e files
-CreateCoffeeDB.java
 ```
 javac -cp .:/usr/share/java/derby.jar CreateCoffeeDB.java
 java -cp .:/usr/share/java/derby.jar CreateCoffeeDB
 ```
-16-1 TestConnection.java
+
+16-1 TestConnection.java 
 ```
 javac -cp .:/usr/share/java/derby.jar TestConnection.java
 java -cp .:/usr/share/java/derby.jar TestConnection
@@ -84,15 +85,17 @@ java --module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.f
 ```
 
 16-14 CoffeeDBManager.java
+
 16-15 OrderEntrySystem.java
 
-The unpaid order table has to be set up first.
+For this application, one class manages the database, and another 
+displays the GUI. We first setup the unpaid order table.
 ```
 javac -cp .:/usr/share/java/derby.jar CreateUnpaidOrderTable.java
 java -cp .:/usr/share/java/derby.jar CreateUnpaidOrderTable
 ```
 
-This application uses one class to manage the database, and another to display the GUI.
+The remaining classes can be compiled and run following that.
 ```
 javac --module-path .:/usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml -cp .:/usr/share/java/derby.jar CoffeeDBManager.java
 javac --module-path .:/usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml -cp .:/usr/share/java/derby.jar OrderEntrySystem.java
